@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import MovieCard from "./MovieCard";
+import Card from "./components/Card/Card";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { GenreContext } from "./GenreContext";
@@ -78,11 +78,7 @@ export default function SearchField() {
       </div>
       <div className="movie-list">
         {movieList.map((movie) => (
-          <MovieCard
-            movie={movie}
-            key={movie.id}
-            handleDetail={getMovieDetail}
-          />
+          <Card movie={movie} key={movie.id} handleDetail={getMovieDetail} />
         ))}
       </div>
     </Container>
