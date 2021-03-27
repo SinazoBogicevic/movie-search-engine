@@ -1,11 +1,12 @@
 import React from "react";
-import { CardContainer, CardImg } from "./card.elements";
+import { CardContainer, CardImg, Overlay } from "./card.elements";
 
 const Card = ({ movie }) => {
-  const posterUrl = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`;
-  const altTag = `${movie.title} poster`;
+  const posterUrl = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`;
+  const altTag = `${movie.title} thumb`;
   return (
     <CardContainer>
+      <Overlay />
       <CardImg src={posterUrl} alt={altTag} />
     </CardContainer>
   );
