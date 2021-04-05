@@ -1,15 +1,13 @@
 import React, { createContext, useState } from "react";
 
-const DataContext = createContext([{}, () => {}]);
+export const DataContext = createContext();
 
-const DataProvider = (props) => {
-  const [state, setState] = useState({});
+export const DataProvider = (props) => {
+  const [data, setData] = useState([]);
 
   return (
-    <DataContext.Provider value={[state, setState]}>
+    <DataContext.Provider value={[data, setData]}>
       {props.children}
     </DataContext.Provider>
   );
 };
-
-export { DataContext, DataProvider };

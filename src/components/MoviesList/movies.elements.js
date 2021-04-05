@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  padding-bottom: 42px;
 `;
 
 export const Container = styled.div`
@@ -11,6 +14,7 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   font-size: 2.5rem;
+  padding-bottom: 42px;
   text-transform: capitalize;
 `;
 

@@ -1,19 +1,26 @@
 import React, { useState, useContext, useEffect } from "react";
 import { QueryContext } from "../../QueryContext";
+import { DataContext } from "../../DataContext";
+import { PageContext } from "../../PageContext";
 import { Main, Container, Title, List } from "./movies.elements";
+import { Spinner } from "../spinner/Spinner";
+import Pagination from "../pagination/Pagination";
 import Card from "../Card/Card";
 
 const Movies = () => {
-  const [query, setQuery] = useContext(QueryContext);
-  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [query] = useContext(QueryContext);
+  const [data, setData] = useContext(DataContext);
+  const [page] = useContext(PageContext);
+  const [visible, setVisible] = useState(true);
   const isSearching = query === "";
-  const cards = movies.map((movie) => {
-    return <Card movie={movie} />;
+  const cards = data.map((movie) => {
+    return <Card movie={movie} key={movie.id} />;
   });
 
   const queryMovies = () => {
-    const api = `https://api.themoviedb.org/3/search/movie?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US&query=${query}&page=1&include_adult=false`;
-    const popularApi = `https://api.themoviedb.org/3/movie/popular?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US`;
+    const api = `https://api.themoviedb.org/3/search/movie?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US&query=${query}&page=${page}&include_adult=false`;
+    const popularApi = `https://api.themoviedb.org/3/movie/popular?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US&page=${page}`;
 
     if (isSearching) {
       fetchMovies(popularApi);
@@ -29,19 +36,26 @@ const Movies = () => {
     try {
       if (res.status === 200) {
         const data = await res.json();
-        console.log(data);
         const { results } = data;
-        console.log(results);
-        setMovies(results);
+        if (results.length === 0) {
+          setVisible(false);
+        }
+        setData(results);
+        setLoading(false);
       }
     } catch (e) {
+      setVisible(false);
       console.log(e);
     }
   };
 
   useEffect(() => {
-    queryMovies();
-  }, []);
+    const timer = setTimeout(() => {
+      queryMovies();
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [query, page]);
 
   return (
     <Main>
@@ -49,6 +63,7 @@ const Movies = () => {
         <Title>{isSearching ? "popular movies" : "searching results"}</Title>
         <List>{cards}</List>
       </Container>
+      <Pagination visible={visible} />
     </Main>
   );
 };
