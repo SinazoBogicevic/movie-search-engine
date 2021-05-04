@@ -1,4 +1,6 @@
 # movie-search-engine
 
-users can search for movies using the moviedb api
-<p><a href="https://sinazobogicevic.github.io/movie-search-engine/"/>Go To Site </p>
+<p>users can search for movies using the moviedb api</p>
+<p>only child friendly movies are shown using a sophistacted alogrithim</p>
+<p>when users search for a movie only family or child-friendly movies will be shown</p>
+<p><a href="www.kiidszone.ml"/>Go To Site </p>
