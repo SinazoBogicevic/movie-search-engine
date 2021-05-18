@@ -19,8 +19,8 @@ const Movies = () => {
   });
 
   const queryMovies = () => {
-    const api = `https://api.themoviedb.org/3/search/movie?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US&query=${query}&page=${page}&include_adult=false`;
-    const popularApi = `https://api.themoviedb.org/3/movie/popular?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US&page=${page}`;
+    const api = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=false`;
+    const popularApi = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`;
 
     if (isSearching) {
       fetchMovies(popularApi);
