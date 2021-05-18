@@ -40,5 +40,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "<p>users can search for movies using the moviedb api</p> <p>only child friendly movies are shown using a sophisticated alogrithm</p> <p>when users search for a movie only family or child-friendly movies will be shown</p> <p><a href=\"www.kiidszone.ml\"/>Go to Kids Zone </p>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinazoBogicevic/movie-search-engine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SinazoBogicevic/movie-search-engine/issues"
   }
 }
