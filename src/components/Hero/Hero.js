@@ -15,7 +15,8 @@ const Hero = () => {
     backgroundImage: `url(${bg})`,
   };
 
-  const api = `https://api.themoviedb.org/3/movie/popular?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US&maxResults=1`;
+  const api = `https://api.themoviedb.org/3/discover/movie?api_key=396dea73ba4dc94c515ba23f832b0ede&certification_country=US&certification.lte=G&sort_by=popularity.desc&maxResults=1`;
+  //const api = `https://api.themoviedb.org/3/movie/popular?api_key=396dea73ba4dc94c515ba23f832b0ede&language=en-US&maxResults=1`;
 
   const fetchData = async (e) => {
     try {
@@ -32,22 +33,15 @@ const Hero = () => {
   };
 
   const getHeroBg = (list) => {
-    list.forEach((element) => {
-      const { adult, genre_ids, backdrop_path, title, overview } = element;
+    
+    const bannerMovie = list[0];
+    const {title, overview, backdrop_path} = bannerMovie;
 
-      if (adult) {
-        return;
-      }
-
-      genre_ids.forEach((id) => {
-        if (id === 12 || id === 16 || id === 35 || 10751 || id === 14) {
-          const url = `https://image.tmdb.org/t/p/w1280/${backdrop_path}`;
-          setBg(url);
-          setTitle(title);
-          setOverview(overview);
-        }
-      });
-    });
+    const url = `https://image.tmdb.org/t/p/w1280/${backdrop_path}`
+    setBg(url);
+    setTitle(title);
+    setOverview(overview)
+    
   };
 
   useEffect(() => {

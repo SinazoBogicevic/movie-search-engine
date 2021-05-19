@@ -12,15 +12,15 @@ const Movies = () => {
   const [query] = useContext(QueryContext);
   const [data, setData] = useContext(DataContext);
   const [page] = useContext(PageContext);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const isSearching = query === "";
   const cards = data.map((movie) => {
     return <Card movie={movie} key={movie.id} />;
   });
 
   const queryMovies = () => {
-    const api = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=false`;
-    const popularApi = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=${page}`;
+    const api = `https://api.themoviedb.org/3/discover/movie?api_key=396dea73ba4dc94c515ba23f832b0ede&query${query}&page=${page}&certification_country=US&certification.lte=G&sort_by=popularity.desc`;
+    const popularApi = `https://api.themoviedb.org/3/discover/movie?api_key=396dea73ba4dc94c515ba23f832b0ede&certification_country=US&certification.lte=G&sort_by=popularity.desc&page=${page}`
 
     if (isSearching) {
       fetchMovies(popularApi);
@@ -37,6 +37,7 @@ const Movies = () => {
       if (res.status === 200) {
         const data = await res.json();
         const { results } = data;
+        console.log(results);
         if (results.length === 0) {
           setVisible(false);
         }
