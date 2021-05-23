@@ -37,7 +37,7 @@ const Movies = () => {
       if (res.status === 200) {
         const data = await res.json();
         const { results } = data;
-        console.log(results);
+        
         if (results.length === 0) {
           setVisible(false);
         }

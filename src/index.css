@@ -3,6 +3,7 @@
 :root {
   --white: #fff;
   --blue: #3498db;
+  --grey: rgb(53, 53, 53);
 }
 
 * {
