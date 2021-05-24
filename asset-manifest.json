@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/movie-search-engine/static/css/main.c986373e.chunk.css",
-    "main.js": "/movie-search-engine/static/js/main.78a067a4.chunk.js",
-    "main.js.map": "/movie-search-engine/static/js/main.78a067a4.chunk.js.map",
-    "runtime-main.js": "/movie-search-engine/static/js/runtime-main.5eaacbe9.js",
-    "runtime-main.js.map": "/movie-search-engine/static/js/runtime-main.5eaacbe9.js.map",
-    "static/js/2.63b81636.chunk.js": "/movie-search-engine/static/js/2.63b81636.chunk.js",
-    "static/js/2.63b81636.chunk.js.map": "/movie-search-engine/static/js/2.63b81636.chunk.js.map",
-    "index.html": "/movie-search-engine/index.html",
-    "precache-manifest.c06f04770c39816e06f4f75043903275.js": "/movie-search-engine/precache-manifest.c06f04770c39816e06f4f75043903275.js",
-    "service-worker.js": "/movie-search-engine/service-worker.js",
-    "static/css/main.c986373e.chunk.css.map": "/movie-search-engine/static/css/main.c986373e.chunk.css.map",
-    "static/js/2.63b81636.chunk.js.LICENSE.txt": "/movie-search-engine/static/js/2.63b81636.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/movie-search-engine/static/media/logo.73f877a0.png",
-    "static/media/mdb.svg": "/movie-search-engine/static/media/mdb.27b65cb4.svg"
+    "main.css": "/static/css/main.c986373e.chunk.css",
+    "main.js": "/static/js/main.f441760b.chunk.js",
+    "main.js.map": "/static/js/main.f441760b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.18d128b8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.18d128b8.js.map",
+    "static/js/2.5924118e.chunk.js": "/static/js/2.5924118e.chunk.js",
+    "static/js/2.5924118e.chunk.js.map": "/static/js/2.5924118e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.55f5a4db2d0101b30c1a312151016755.js": "/precache-manifest.55f5a4db2d0101b30c1a312151016755.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.c986373e.chunk.css.map": "/static/css/main.c986373e.chunk.css.map",
+    "static/js/2.5924118e.chunk.js.LICENSE.txt": "/static/js/2.5924118e.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/static/media/logo.73f877a0.png",
+    "static/media/mdb.svg": "/static/media/mdb.27b65cb4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5eaacbe9.js",
-    "static/js/2.63b81636.chunk.js",
+    "static/js/runtime-main.18d128b8.js",
+    "static/js/2.5924118e.chunk.js",
     "static/css/main.c986373e.chunk.css",
-    "static/js/main.78a067a4.chunk.js"
+    "static/js/main.f441760b.chunk.js"
   ]
 }
