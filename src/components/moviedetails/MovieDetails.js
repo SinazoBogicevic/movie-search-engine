@@ -12,6 +12,10 @@ const MovieDetails = () => {
     
     //const {backdrop_path} = details;
     const styles = {
+      height: 'fit-content',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       backgroundImage: `url(${bg})`,
     };
 
@@ -39,7 +43,7 @@ const MovieDetails = () => {
     }, []);
 
     return (
-        <Container>
+        <Container styles={{height: 'fit-content'}}>
             <BgContainer style={styles}>
               <DetailsCard />
             </BgContainer>

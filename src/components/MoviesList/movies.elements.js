@@ -24,4 +24,20 @@ export const List = styled.ul`
   gap: 40px;
   position: relative;
   list-style-type: none;
+
+@media screen and (max-width: 1024px){
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+}
+
+@media screen and (max-width: 768px){
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+};
+
+@media screen and (max-width: 600px){
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+};
+
+@media screen and (max-width: 375px){
+  grid-template-columns: repeat(1, 1fr);
+};
 `;

@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {DETAILS_API, IMDB, PLOT} from "../..//utils/constants";
-import {DetailsCardContainer, CardImageContainer, Details, Image,
-    DetailsInnerContainer, DetailsPlot, GenericContainer, GenericTitle,
+import {DetailsCardContainer, CardImageContainer, Details, Image,Generics, RatingTypography,
+    Circle, DetailsInnerContainer, DetailsPlot, GenericContainer, GenericTitle,
     Typography, DetailsTitle, DetailsPlotTitle} from "./DetailsCard.elements";
 
 const DetailsCard = () => {
@@ -26,7 +26,7 @@ const DetailsCard = () => {
          const res = await req.json();
          
          const {poster_path, title, overview, vote_average, } = res;
-         console.log(res);
+         
          const url = `https://image.tmdb.org/t/p/w500/${res.poster_path}`;
          setDetails((prevState) => ({
              ...prevState,
@@ -34,7 +34,8 @@ const DetailsCard = () => {
              title: title,
              plot: overview,
              rating: vote_average
-         }))
+         }));
+         console.log(details.plot);
 
        }
  
@@ -56,15 +57,19 @@ const DetailsCard = () => {
                 <DetailsInnerContainer>
                     <DetailsTitle>{details.title}</DetailsTitle>
                     <DetailsPlotTitle>{PLOT}</DetailsPlotTitle>
-                    <DetailsPlot>{details.DetailsPlotlot}</DetailsPlot>
+                    <DetailsPlot>{details.plot}</DetailsPlot>
+                    <Generics>
                     <GenericContainer>
                         <GenericTitle>{IMDB}</GenericTitle>
-                        <Typography>{details.rating}</Typography>
+                        <Circle>
+                        <RatingTypography>{details.rating}</RatingTypography>
+                        </Circle>
                     </GenericContainer>
                     <GenericContainer>
                         <GenericTitle>Director</GenericTitle>
                         <Typography>name</Typography>
                     </GenericContainer>
+                    </Generics>
                 </DetailsInnerContainer>
             </Details>
         </DetailsCardContainer>

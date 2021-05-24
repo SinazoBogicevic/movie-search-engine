@@ -4,7 +4,6 @@ import {
   NavItems,
   LogoContainer,
   MdbContainer,
-  Slogan,
 } from "./nav.elements";
 import { Logo, LinkUI } from "../../GlobalStyles";
 import logo from "../../assets/logo.png";
@@ -15,8 +14,10 @@ const Nav = () => {
     <Container>
       <NavItems>
         <LogoContainer>
+          <LinkUI to="/">
           <Logo src={logo} alt="kids zone written in rainbow colors" />
           {/**<Slogan>Let the fun begin</Slogan>**/}
+          </LinkUI>
         </LogoContainer>
         <MdbContainer>
           <Logo src={mdb} alt="neon text let the fun begin" />
